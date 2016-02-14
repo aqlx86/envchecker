@@ -9,7 +9,6 @@
             "email": "aqlx86@gmail.com"
         }
     ],
-    "minimum_stability": "dev",
     "require": {},
     "config": {
         "bin-dir": "bin"
