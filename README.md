@@ -1,4 +1,7 @@
-# envchecker
+Introduction
+------------
+
+Simple Laravel 5 package that checks if your `.env` file is outdated.
 
 
 Installation
@@ -25,4 +28,16 @@ Usage
 
 ```
 php artisan env:check
+```
+
+Sample Output 
+
+```
+template file contains new values.
++------------------+---------------+
+| New Keys         | Default Value |
++------------------+---------------+
+| MAIL_PORT        | 2525          |
+| MAIL_ENCRYPTION2 | null          |
++------------------+---------------+
 ```
