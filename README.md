@@ -15,7 +15,7 @@ Add Envchecker to your composer.json file:
 Add the service provider to your Laravel application config:
 
 ```PHP
-'Aqlx86\EnvChecker\EnvCheckerServiceProvider::class,'
+Aqlx86\EnvChecker\EnvCheckerServiceProvider::class
 ```
 
 Create config
@@ -30,7 +30,7 @@ Usage
 php artisan env:check
 ```
 
-Sample Output 
+Sample Output
 
 ```
 template file contains new values.
