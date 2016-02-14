@@ -9,7 +9,7 @@ Installation
 
 Add Envchecker to your composer.json file:
 
-```composer.phar require "iverberk/larasearch```
+```composer.phar require "aqlx86/envchecker"```
 
 
 Add the service provider to your Laravel application config:
