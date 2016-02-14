@@ -1,0 +1,17 @@
+{
+    "name": "aqlx86/envchecker",
+    "description": "laravel env file checker",
+    "homepage": "https://github.com/aqlx86/EnvChecker",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arnel Labarda",
+            "email": "aqlx86@gmail.com"
+        }
+    ],
+    "minimum_stability": "dev",
+    "require": {},
+    "config": {
+        "bin-dir": "bin"
+    }
+}
