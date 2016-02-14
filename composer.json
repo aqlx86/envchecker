@@ -12,7 +12,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Aqlx86\EnvChecker\\": "src/"
+            "Aqlx86\\EnvChecker\\": "src/"
         }
     },
     "config": {
