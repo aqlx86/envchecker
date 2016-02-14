@@ -44,12 +44,18 @@ class CheckCommand extends Command
 
         if ($new_keys)
         {
+            $this->info('template file contains new values.');
+
             $data = [];
 
             foreach ($new_keys as $key => $value)
                 $data[] = [$key, $value];
 
             $this->table(['New Keys', 'Default Value'], $data);
+        }
+        else
+        {
+            $this->info('.env file is up to date.');
         }
     }
 }
