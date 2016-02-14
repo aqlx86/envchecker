@@ -10,6 +10,11 @@
         }
     ],
     "require": {},
+    "autoload": {
+        "psr-4": {
+            "Aqlx86\EnvChecker\\": "src/"
+        }
+    },
     "config": {
         "bin-dir": "bin"
     }
