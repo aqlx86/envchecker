@@ -1,6 +1,10 @@
 <?php
 
 return [
+    // template env file path
     'example' => base_path('.env.example'),
-    'local' => base_path('.env')
+    // local env file 
+    'local' => base_path('.env'),
+    // optional env vars
+    'optional' => []
 ];
