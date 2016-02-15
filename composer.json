@@ -6,10 +6,15 @@
     "authors": [
         {
             "name": "Arnel Labarda",
-            "email": "aqlx86@gmail.com"
+            "email": "aqlx86@gmail.com",
+            "homepage": "http://aql.ph/",
+            "role": "Maintainer"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=5.5.9",
+        "vlucas/phpdotenv": "~2.2"
+    },
     "autoload": {
         "psr-4": {
             "Aqlx86\\EnvChecker\\": "src/"
