@@ -3,6 +3,7 @@
 namespace Aqlx86\EnvChecker;
 
 use Dotenv\Dotenv;
+use Aqlx86\EnvChecker\Exception;
 
 class EnvChecker
 {
@@ -21,6 +22,10 @@ class EnvChecker
     public function load($env)
     {
         $file = \Config::get('envchecker.'.$env);
+
+        if (! file_exists($file))
+            throw new Exception\MissingFile(sprintf('Unable to read %s', $file));
+
         $dotenv = new Dotenv(dirname($file), basename($file));
 
         return $this->to_array($dotenv->load());
