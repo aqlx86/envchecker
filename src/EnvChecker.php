@@ -12,7 +12,10 @@ class EnvChecker
         $example_envs = $this->load('example');
         $local_envs = $this->load('local');
 
-        return array_diff_key($example_envs, $local_envs);
+        $diff_vars = array_diff_key($example_envs, $local_envs);
+        $diff_vars = $this->remove_optional_vars($diff_vars);
+
+        return $diff_vars;
     }
 
     public function load($env)
@@ -40,5 +43,16 @@ class EnvChecker
     {
         list($name, $value) = array_map('trim', explode('=', $string, 2));
         return [$name, $value];
+    }
+
+    protected function remove_optional_vars($env_vars)
+    {
+        $optional_vars = \Config::get('envchecker.optional');
+
+        foreach ($optional_vars as $var)
+            if (array_key_exists($var, $env_vars))
+                unset ($env_vars[$var]);
+
+        return $env_vars;
     }
 }
