@@ -1,6 +1,6 @@
 <?php
 
-namespace Aqlx86\EnvChecker;
+namespace EnvChecker;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -8,7 +8,7 @@ class EnvCheckerServiceProvider extends ServiceProvider
 {
 
     protected $commands = [
-        'Aqlx86\EnvChecker\Commands\CheckCommand'
+        'EnvChecker\Commands\CheckCommand'
     ];
 
     /**
@@ -19,8 +19,8 @@ class EnvCheckerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/config/envchecker.php' => config_path('envchecker.php'),
-        ]);
+            __DIR__.'/Config/envchecker.php' => config_path('envchecker.php'),
+        ], 'config');
     }
 
     /**

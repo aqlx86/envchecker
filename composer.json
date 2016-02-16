@@ -15,9 +15,12 @@
         "php": ">=5.5.9",
         "vlucas/phpdotenv": "~2.2"
     },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    },
     "autoload": {
         "psr-4": {
-            "Aqlx86\\EnvChecker\\": "src/"
+            "EnvChecker\\": "src/EnvChecker/"
         }
     },
     "config": {

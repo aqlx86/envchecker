@@ -20,7 +20,7 @@ Aqlx86\EnvChecker\EnvCheckerServiceProvider::class
 
 Create config
 ```
-php artisan vendor:publish
+php artisan vendor:publish --provider="EnvChecker\EnvCheckerServiceProvider"
 ```
 
 Usage

@@ -1,9 +1,10 @@
 <?php
 
-namespace Aqlx86\EnvChecker\Commands;
+namespace EnvChecker\Commands;
 
 use Illuminate\Console\Command;
-use Aqlx86\EnvChecker\EnvChecker;
+use EnvChecker\Env;
+use EnvChecker\EnvChecker;
 
 class CheckCommand extends Command
 {
@@ -38,9 +39,12 @@ class CheckCommand extends Command
      */
     public function handle()
     {
-        $envchecker = new EnvChecker;
+        $envchecker = new EnvChecker(
+            new Env(\Config::get('envchecker.example')),
+            new Env(\Config::get('envchecker.local'))
+        );
 
-        $new_keys = $envchecker->check();
+        $new_keys = $envchecker->get_new_vars(\Config::get('envchecker.optional'));
 
         if ($new_keys)
         {

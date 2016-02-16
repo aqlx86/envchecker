@@ -1,6 +1,6 @@
 <?php
 
-namespace Aqlx86\EnvChecker\Exception;
+namespace EnvChecker\Exception;
 
 class MissingFile extends \Exception
 {
