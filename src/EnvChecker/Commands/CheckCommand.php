@@ -39,10 +39,13 @@ class CheckCommand extends Command
      */
     public function handle()
     {
-        $envchecker = new EnvChecker(
-            app()->make(Env::class)->load(\Config::get('envchecker.example')),
-            app()->make(Env::class)->load(\Config::get('envchecker.local'))
-        );
+        $template = app()->make(Env::class);
+        $template->load(\Config::get('envchecker.example'));
+
+        $local = app()->make(Env::class);
+        $local->load(\Config::get('envchecker.local'));
+
+        $envchecker = new EnvChecker($template, $local);
 
         $new_keys = $envchecker->get_new_vars(\Config::get('envchecker.optional'));
 
