@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/aqlx86/envchecker.svg?branch=master)](https://travis-ci.org/aqlx86/envchecker)
+
 Introduction
 ------------
 
@@ -15,12 +17,27 @@ Add Envchecker to your composer.json file:
 Add the service provider to your Laravel application config:
 
 ```PHP
-Aqlx86\EnvChecker\EnvCheckerServiceProvider::class
+EnvChecker\EnvCheckerServiceProvider::class
 ```
 
-Create config
+Configuration
+-------------
+
 ```
 php artisan vendor:publish --provider="EnvChecker\EnvCheckerServiceProvider"
+```
+
+Update `config/envchecker.php`
+```
+return [
+    // template env file path
+    'example' => base_path('.env.example'),
+    // local env file
+    'local' => base_path('.env'),
+    // optional env vars
+    'optional' => []
+];
+
 ```
 
 Usage
@@ -42,7 +59,12 @@ template file contains new values.
 +------------------+---------------+
 ```
 
-TODO
+Test
 ----
 
-* Unit Test
+PHPSpec
+```
+./bin/phpspec run
+```
+
+Todo PHPUnit
