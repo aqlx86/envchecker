@@ -30,6 +30,10 @@ class Env
         return $lines;
     }
 
+    /**
+     * If the $name contains an = sign, then we split it into 2 parts, a name & value.
+     * @see https://github.com/vlucas/phpdotenv/blob/1.1/src/Dotenv.php#L164
+     */
     protected function split_string_to_key_value($string)
     {
         list($name, $value) = array_map('trim', explode('=', $string, 2));
