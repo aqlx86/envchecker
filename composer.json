@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "josegonzalez/dotenv": "dev-master"
+        "josegonzalez/dotenv": "^2.0"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0"
@@ -25,9 +25,5 @@
     },
     "config": {
         "bin-dir": "bin"
-    },
-
-    "minimum-stability": "dev",
-
-    "prefer-stable": true
+    }
 }

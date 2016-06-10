@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a12005ba1277d95518fc046d9aeb56ef",
-    "content-hash": "fb4c62c5b6d2595e282138e0540d2c90",
+    "hash": "cdc3758ff80cd243a40ea5d265526eeb",
+    "content-hash": "9db4c826aa777710c3c6b961473ec3c4",
     "packages": [
         {
             "name": "josegonzalez/dotenv",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/josegonzalez/php-dotenv.git",
@@ -1105,11 +1105,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "josegonzalez/dotenv": 20
-    },
-    "prefer-stable": true,
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.5.9"
