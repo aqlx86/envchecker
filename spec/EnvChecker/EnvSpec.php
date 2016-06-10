@@ -4,7 +4,7 @@ namespace spec\EnvChecker;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Dotenv\Dotenv;
+use josegonzalez\Dotenv;
 
 class EnvSpec extends ObjectBehavior
 {
@@ -27,7 +27,7 @@ class EnvSpec extends ObjectBehavior
 
         $this->to_array()->shouldReturn([
             'APP_ENV' => 'local',
-            'APP_DEBUG' => 'true',
+            'APP_DEBUG' => true,
             'APP_KEY' => 'SomeRandomString',
         ]);
     }
