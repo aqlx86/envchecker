@@ -59,6 +59,20 @@ class CheckCommand extends Command
                 $data[] = [$key, $value];
 
             $this->table(['New Keys', 'Default Value'], $data);
+
+            $update = $this->confirm('Would you like to apply new values to your env file?');
+
+            if ($update)
+            {
+                $string_data = '';
+
+                foreach ($new_keys as $key => $value)
+                    $string_data.= sprintf("%s=%s\n", $key, $value);
+
+                file_put_contents('.env', $string_data, FILE_APPEND);
+
+                $this->info('.env updated');
+            }
         }
         else
         {
