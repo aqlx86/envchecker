@@ -39,11 +39,14 @@ class CheckCommand extends Command
      */
     public function handle()
     {
+        $local_env = \Config::get('envchecker.local');
+        $template_env = \Config::get('envchecker.example');
+
         $template = app()->make(Env::class);
-        $template->load(\Config::get('envchecker.example'));
+        $template->load($template_env);
 
         $local = app()->make(Env::class);
-        $local->load(\Config::get('envchecker.local'));
+        $local->load($local_env);
 
         $envchecker = new EnvChecker($template, $local);
 
@@ -69,7 +72,7 @@ class CheckCommand extends Command
                 foreach ($new_keys as $key => $value)
                     $string_data.= sprintf("%s=%s\n", $key, $value);
 
-                file_put_contents('.env', $string_data, FILE_APPEND);
+                file_put_contents($local_env, $string_data, FILE_APPEND);
 
                 $this->info('.env updated');
             }
