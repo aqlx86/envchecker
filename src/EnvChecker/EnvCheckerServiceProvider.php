@@ -30,6 +30,11 @@ class EnvCheckerServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__ . '/Config/envchecker.php',
+            'envchecker'
+        );
+
         $this->commands($this->commands);
     }
 }
